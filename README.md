@@ -48,6 +48,3 @@ The opening title is **Structures of the Unseen**. The chapter directory uses se
 - Redesigned the seven chapter covers to preserve clear text hierarchy.
 - Adjusted figure captions and internal cover layout so no cover text is blocked by labels.
 - Added more layered motion and a calmer sense of flow on page load.
-# computaional-design-workflows
-# computaional-design-workflows
-# computaional-design-workflows
