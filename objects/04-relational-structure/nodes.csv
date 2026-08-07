@@ -1,0 +1,25 @@
+id,name,role,age,department,friends,size,color
+Platform,Delivery Platform,platform,100,Platform Core,13,46,#ff5c5c
+Algorithm,Dispatch Algorithm,algorithm,96,Platform Core,9,40,#ff9f43
+Rating,Rating System,algorithm,86,Platform Core,5,32,#ff9f43
+Pricing,Dynamic Pricing,algorithm,82,Platform Core,4,30,#ff9f43
+Data,Data Infrastructure,data,92,Data Layer,8,37,#7c5cff
+Location,Location Data,data,78,Data Layer,4,28,#7c5cff
+Metrics,Performance Metrics,data,84,Data Layer,7,31,#7c5cff
+Courier,Courier,worker,88,Labor,8,35,#2dd4bf
+Driver,Ride-hail Driver,worker,84,Labor,7,34,#2dd4bf
+Picker,Warehouse Picker,worker,72,Labor,4,29,#2dd4bf
+Moderator,Content Moderator,worker,68,Labor,4,28,#2dd4bf
+Customer,Customer,market,76,Market,7,32,#4da3ff
+Restaurant,Restaurant,market,70,Market,6,30,#4da3ff
+Merchant,Merchant,market,66,Market,4,28,#4da3ff
+Advertiser,Advertiser,market,55,Market,3,25,#4da3ff
+Regulator,Labor Regulator,governance,75,Governance,5,31,#f6c85f
+City,City Government,governance,62,Governance,3,28,#f6c85f
+Court,Court,governance,58,Governance,3,27,#f6c85f
+Union,Worker Union,collective,72,Collective,5,31,#ff7fd1
+Coop,Platform Cooperative,collective,78,Collective,6,34,#ff7fd1
+Income,Worker Income,outcome,80,Outcomes,4,30,#a8b3cf
+Time,Worker Time,outcome,76,Outcomes,3,29,#a8b3cf
+Visibility,Algorithmic Visibility,outcome,70,Outcomes,3,27,#a8b3cf
+Safety,Worker Safety,outcome,64,Outcomes,3,26,#a8b3cf

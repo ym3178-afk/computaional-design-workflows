@@ -1,0 +1,431 @@
+/*
+  Unified quiet palette for the final website.
+  Loaded after each object's local stylesheet so the seven exercises retain
+  their layouts and interactions while sharing one restrained visual system.
+*/
+:root{
+  --quiet-paper:#f3f0e8;
+  --quiet-paper-2:#ebe6dc;
+  --quiet-surface:#faf8f3;
+  --quiet-stone:#d4cdc1;
+  --quiet-sage:#819389;
+  --quiet-sage-dark:#52635b;
+  --quiet-clay:#9f796c;
+  --quiet-ink:#2f3632;
+  --quiet-muted:#6c756f;
+  --quiet-line:rgba(47,54,50,.16);
+
+  /* Shared aliases used by the seven object stylesheets */
+  --bg:var(--quiet-paper);
+  --paper:var(--quiet-paper);
+  --paper-strong:var(--quiet-surface);
+  --old:var(--quiet-paper-2);
+  --old-paper:var(--quiet-paper-2);
+  --ink:var(--quiet-ink);
+  --text:var(--quiet-ink);
+  --muted:var(--quiet-muted);
+  --soft:#647069;
+  --deep:var(--quiet-ink);
+  --deep2:#445149;
+  --surface:var(--quiet-surface);
+  --surface-2:var(--quiet-paper-2);
+  --line:var(--quiet-line);
+  --line-strong:rgba(47,54,50,.28);
+  --grid:rgba(47,54,50,.09);
+  --accent:var(--quiet-sage-dark);
+  --accent-soft:#dfe6e1;
+  --brass:var(--quiet-sage);
+  --leaf:var(--quiet-sage-dark);
+  --green:var(--quiet-sage-dark);
+  --teal:#aab8b0;
+  --red:var(--quiet-clay);
+  --flower:#a77e70;
+  --control:#667b70;
+  --data:#82968c;
+  --exchange:#98a9a1;
+  --governance:#aea28f;
+  --collective:#9d8985;
+  --outcome:#a8b0ab;
+  --lime:#b8c4bd;
+  --orange:var(--quiet-clay);
+  --blue:#758c84;
+  --violet:#8f8c91;
+  --yellow:#aaa08d;
+  --rose:#a18783;
+  --white:var(--quiet-surface);
+  --success:#607a6c;
+  --danger:#9b756a;
+  --border:var(--quiet-line);
+  --shadow:0 18px 50px rgba(47,54,50,.12);
+}
+
+html{background:var(--quiet-paper)}
+body{
+  background:
+    radial-gradient(circle at 12% 2%,rgba(129,147,137,.12),transparent 28rem),
+    linear-gradient(180deg,var(--quiet-paper) 0%,#eeeae1 100%) !important;
+  color:var(--quiet-ink) !important;
+}
+body::before{
+  opacity:.045 !important;
+  mix-blend-mode:multiply !important;
+  background-image:radial-gradient(circle,rgba(47,54,50,.20) 0 1px,transparent 1.35px) !important;
+  background-size:31px 31px !important;
+}
+
+a{color:var(--quiet-sage-dark)}
+
+/* Shared navigation */
+.topbar,.nav,.site-header,body>header{
+  background:rgba(243,240,232,.91) !important;
+  color:var(--quiet-ink) !important;
+  border-color:var(--quiet-line) !important;
+  box-shadow:none !important;
+  backdrop-filter:blur(16px) !important;
+}
+.topbar a,.topbar nav a,.nav a,.nav strong,.site-header,.site-header a,body>header a,
+.brand,.course,.author{color:var(--quiet-ink) !important}
+.topbar nav a,.course span{color:var(--quiet-muted) !important}
+
+/* Root portfolio */
+body>.topbar + main .hero,
+body>main#top .hero{
+  color:var(--quiet-ink) !important;
+  background:
+    radial-gradient(circle at 78% 22%,rgba(255,255,255,.58),transparent 25%),
+    linear-gradient(135deg,#f6f3ec 0%,#e8e3d9 58%,#c8d2cc 100%) !important;
+  border-color:var(--quiet-line) !important;
+}
+body>main#top .hero h1 em{color:var(--quiet-sage-dark) !important}
+body>main#top .enter{color:var(--quiet-ink) !important;border-color:var(--quiet-ink) !important}
+body>main#top .index,body>main#top .type{color:var(--quiet-sage-dark) !important}
+body>main#top .section,
+body>main#top .objects article{border-color:var(--quiet-line) !important}
+body>main#top .section>div>p,
+body>main#top .objects article>div>p:not(.type){color:var(--quiet-muted) !important}
+body>main#top .objects article>div>p strong{color:var(--quiet-ink) !important}
+body>main#top .objects article>b{color:var(--quiet-sage-dark) !important}
+body>main#top .actions button,
+body>main#top .actions a{
+  border-color:var(--quiet-sage) !important;
+  color:var(--quiet-ink) !important;
+  background:rgba(255,255,255,.28) !important;
+}
+body>main#top .actions button:hover,
+body>main#top .actions a:hover{background:var(--quiet-sage-dark) !important;color:var(--quiet-surface) !important}
+body>main#top figure{
+  border-color:rgba(82,99,91,.45) !important;
+  box-shadow:12px 14px 0 rgba(47,54,50,.11) !important;
+}
+body>main#top .v2d{background:linear-gradient(135deg,#c9d3cd,#aab8b0) !important}
+body>main#top .v2d::before{background:var(--quiet-clay) !important;box-shadow:-78px 80px 0 -18px #8d6d63,88px 75px 0 -22px #b08b7d !important}
+body>main#top .v3d{background:radial-gradient(circle at 50% 48%,#d8cbb6 0 4%,rgba(129,147,137,.22) 5% 12%,transparent 13%),#34413b !important}
+body>main#top .vtime{background:#e6e8e3 !important}
+body>main#top .vtime i{background:#87998f !important}
+body>main#top .vtime i:nth-child(2){background:#c4cec8 !important}
+body>main#top .vtime i:nth-child(3){background:#9f796c !important}
+body>main#top .vtime i:nth-child(4){background:#52635b !important}
+body>main#top .vtime i:nth-child(5){background:#b3aa9c !important}
+body>main#top .vnetwork{background:radial-gradient(circle,rgba(159,121,108,.18),transparent 38%),#34413b !important}
+body>main#top .vmap{background:linear-gradient(20deg,rgba(82,99,91,.84),rgba(47,54,50,.96)),repeating-linear-gradient(55deg,transparent 0 22px,rgba(243,240,232,.16) 23px 24px) !important}
+body>main#top .vpoll{background:var(--quiet-surface) !important}
+body>main#top .vpoll i{background:#52635b !important}
+body>main#top .vpoll i:nth-child(2){background:#7f9187 !important}
+body>main#top .vpoll i:nth-child(3){background:#9f796c !important}
+body>main#top .vpoll i:nth-child(4){background:#b0a797 !important}
+body>main#top .vagent{background:linear-gradient(145deg,#52635b,#34413b) !important}
+body>main#top .vagent p{background:var(--quiet-surface) !important;color:var(--quiet-ink) !important}
+body>main#top .vagent strong{background:var(--quiet-clay) !important;color:var(--quiet-surface) !important}
+body>main#top .palette i{border:1px solid rgba(47,54,50,.09)}
+body>main#top .docs a{color:var(--quiet-ink) !important;border-color:var(--quiet-sage) !important}
+body>footer{background:#dfe5e0 !important;color:var(--quiet-ink) !important}
+body>footer strong,body>footer a{color:var(--quiet-ink) !important}
+dialog{background:var(--quiet-surface) !important;color:var(--quiet-ink) !important;border-color:var(--quiet-sage) !important}
+dialog header{background:var(--quiet-paper) !important;color:var(--quiet-ink) !important;border-color:var(--quiet-line) !important}
+dialog header button{color:var(--quiet-ink) !important}
+
+/* 2D and 3D spatial canvas shells */
+.nav + .hero{
+  color:var(--quiet-ink) !important;
+  background:
+    radial-gradient(circle at 72% 24%,rgba(255,255,255,.58),transparent 24%),
+    linear-gradient(135deg,#f5f2eb 0%,#e4dfd5 64%,#c7d1cb 100%) !important;
+  border-color:var(--quiet-line) !important;
+}
+.canvas-section{border-color:var(--quiet-line) !important}
+.canvas-section aside{border-color:var(--quiet-sage) !important}
+.canvas-section aside span{color:var(--quiet-sage-dark) !important}
+.canvas-section aside p,.statement p{color:var(--quiet-muted) !important}
+.canvas-box{
+  border-color:rgba(82,99,91,.55) !important;
+  background:#34413b !important;
+  box-shadow:14px 16px 0 rgba(47,54,50,.10),0 32px 90px rgba(47,54,50,.12) !important;
+}
+.statement{background:rgba(129,147,137,.08) !important;border-color:var(--quiet-sage) !important}
+
+/* Temporal structure */
+.project-intro,.overview,.visual-section{border-color:var(--quiet-line) !important}
+.project-title span{-webkit-text-stroke-color:var(--quiet-sage-dark) !important}
+.d3-canvas,.important-note,.csv-modification{
+  background:rgba(250,248,243,.92) !important;
+  border-color:var(--quiet-line) !important;
+  box-shadow:0 20px 58px rgba(47,54,50,.08) !important;
+}
+.important-note{box-shadow:inset 5px 0 0 var(--quiet-clay) !important}
+.csv-modification{box-shadow:inset 5px 0 0 var(--quiet-sage) !important}
+.tooltip{background:var(--quiet-ink) !important;color:var(--quiet-surface) !important}
+
+/* Relational structure */
+.viz-shell{
+  background:rgba(250,248,243,.92) !important;
+  border-color:var(--quiet-line) !important;
+  box-shadow:0 30px 75px rgba(47,54,50,.12) !important;
+}
+.control-panel,.detail-panel{background:rgba(243,240,232,.97) !important;color:var(--quiet-ink) !important}
+.canvas-wrap{background:#34413b !important}
+.canvas-wrap::before{background-image:linear-gradient(rgba(243,240,232,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(243,240,232,.045) 1px,transparent 1px) !important}
+.filter-button,.panel-actions button,.connection-item{
+  background:rgba(255,255,255,.32) !important;
+  color:var(--quiet-ink) !important;
+  border-color:var(--quiet-line) !important;
+}
+.filter-button:hover,.panel-actions button:hover{background:rgba(129,147,137,.14) !important;color:var(--quiet-ink) !important}
+.node-label{fill:#f3f0e8 !important;stroke:#34413b !important}
+.canvas-note{color:rgba(243,240,232,.58) !important}
+.tooltip.visible,.tooltip{border-color:rgba(243,240,232,.18) !important}
+
+/* Geospatial structure */
+.panel{background:rgba(243,240,232,.93) !important;border-color:rgba(255,255,255,.68) !important;box-shadow:var(--shadow) !important}
+.source-badge{background:rgba(255,255,255,.38) !important}
+.mode-button,select,.text-button,#campus-view,#district-view,#presentation-mode{
+  border-color:var(--quiet-line) !important;
+}
+
+/* Engagement component */
+.poll-card{background:var(--quiet-surface) !important;border-color:var(--quiet-sage-dark) !important;box-shadow:10px 10px 0 rgba(82,99,91,.42) !important}
+.vote-option{background:var(--quiet-surface) !important;color:var(--quiet-ink) !important}
+.vote-option:hover:not(:disabled){background:var(--quiet-sage) !important;color:var(--quiet-surface) !important}
+.vote-option.selected{background:var(--quiet-sage-dark) !important;color:var(--quiet-surface) !important}
+.result-track{background:#e4e0d7 !important}
+.result-track span{background:var(--quiet-sage) !important}
+
+/* Agent */
+.layout aside{border-color:var(--quiet-sage) !important}
+.layout aside p,.hero>p:last-child,.method p{color:var(--quiet-muted) !important}
+.layout aside li{border-color:var(--quiet-line) !important;background:rgba(255,255,255,.24) !important}
+.chat{background:rgba(250,248,243,.78) !important;border-color:var(--quiet-sage) !important;box-shadow:14px 16px 0 rgba(47,54,50,.10) !important}
+.messages .bot{background:var(--quiet-surface) !important;color:var(--quiet-ink) !important;border:1px solid var(--quiet-line)}
+.messages .user{background:var(--quiet-sage-dark) !important;color:var(--quiet-surface) !important}
+.messages .bot a{color:var(--quiet-sage-dark) !important}
+.prompts button{color:var(--quiet-ink) !important;border-color:var(--quiet-line) !important;background:rgba(255,255,255,.3) !important}
+form{border-color:var(--quiet-line) !important}
+form input{background:var(--quiet-surface) !important;border-color:var(--quiet-line) !important;color:var(--quiet-ink) !important}
+form button{background:var(--quiet-sage-dark) !important;color:var(--quiet-surface) !important}
+.method>div{background:var(--quiet-line) !important;border-color:var(--quiet-line) !important}
+.method article{background:var(--quiet-surface) !important}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+}
+
+
+/* ================================================================
+   Final site typography — one system across all seven digital objects
+   ================================================================ */
+:root{
+  --font-heading:"Instrument Serif", serif;
+  --font-body:Inter,-apple-system,"Segoe UI",sans-serif;
+  --type-h1:64px;
+  --type-h2:40px;
+  --type-h3:24px;
+  --type-body:16px;
+  --type-caption:13px;
+}
+
+*,*::before,*::after{
+  font-family:var(--font-body) !important;
+}
+html,body{
+  font-family:var(--font-body) !important;
+  font-size:var(--type-body) !important;
+  font-weight:400 !important;
+  line-height:1.6 !important;
+}
+body{color:#333 !important;}
+
+h1,h2,h3,
+.hero h1,.project-title,.title-panel h1,.title-panel h2,
+.popup h3,.method h3,.section li strong,footer strong,footer a{
+  font-family:var(--font-heading) !important;
+  font-weight:700 !important;
+  line-height:1.1 !important;
+  letter-spacing:-.02em !important;
+}
+h1,.hero h1,.project-title{font-size:var(--type-h1) !important;}
+h2,.section h2,.heading h2,.title-panel h2,.layout aside h2{font-size:var(--type-h2) !important;}
+h3,.objects h3,.method h3,.popup h3{font-size:var(--type-h3) !important;}
+
+p,li,button,input,select,textarea,label,a{
+  font-family:var(--font-body) !important;
+  font-size:var(--type-body);
+  font-weight:400;
+  line-height:1.6;
+}
+p{max-width:65ch;}
+small,figcaption,.caption,.meta,.index,.type,.label,.eyebrow,
+.status-indicator,.legend-focus,.popup-kicker,.source-badge,.course span,
+.site-header,.topbar,.nav,.sphere-heading,.sphere-hint,.sphere-labels button,
+.hero-facts,.actions a,.actions button,.docs a,footer small,dialog header,
+.canvas-note,.input-hint,.project-meta,.project-subtitle{
+  font-family:var(--font-body) !important;
+  font-size:var(--type-caption) !important;
+  font-weight:400 !important;
+  line-height:1.45 !important;
+  color:#888 !important;
+}
+button,input,select,textarea{font-family:var(--font-body) !important;}
+code,pre,kbd,samp{font-family:var(--font-body) !important;}
+svg text{font-family:var(--font-body) !important;}
+
+@media(max-width:720px){
+  h1,.hero h1,.project-title{font-size:48px !important;}
+  h2,.section h2,.heading h2,.title-panel h2,.layout aside h2{font-size:34px !important;}
+}
+
+
+/* ================================================================
+   FINAL LAYOUT REFINEMENT — STRUCTURES OF THE UNSEEN
+   Responsive typography and separated chapter/object navigation.
+   ================================================================ */
+:root{
+  --type-h1:clamp(52px,6vw,72px);
+  --type-h2:clamp(34px,4vw,44px);
+  --type-h3:clamp(22px,2.3vw,28px);
+  --type-body:16px;
+  --type-caption:13px;
+}
+
+h1,.hero h1,.project-title{
+  font-size:var(--type-h1) !important;
+  line-height:1.08 !important;
+  letter-spacing:-.02em !important;
+}
+h2,.section h2,.heading h2,.title-panel h2,.layout aside h2{
+  font-size:var(--type-h2) !important;
+  line-height:1.08 !important;
+}
+h3,.objects h3,.method h3,.popup h3{
+  font-size:var(--type-h3) !important;
+  line-height:1.12 !important;
+}
+p,li,button,input,select,textarea,label,a{
+  font-size:var(--type-body);
+  line-height:1.6;
+}
+
+/* The landing title has its own three-line display rhythm. */
+body>main#top .orbital-hero h1{
+  font-size:clamp(58px,7.2vw,86px) !important;
+  line-height:.88 !important;
+  letter-spacing:-.025em !important;
+  width:min-content;
+}
+body>main#top .orbital-hero h1 em{
+  padding-left:.42em;
+  font-weight:400 !important;
+}
+body>main#top .hero-copy{max-width:690px;}
+body>main#top .hero-statement{
+  max-width:58ch;
+  font-size:17px !important;
+  line-height:1.68 !important;
+}
+body>main#top .hero-facts{gap:10px 12px;}
+body>main#top .hero-facts span{
+  padding:8px 10px;
+  border:1px solid rgba(47,54,50,.16);
+  border-radius:4px;
+}
+
+/* Seven chapter controls are discrete tiles, not one continuous strip. */
+body>main#top .sphere-labels{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  padding:10px 0 2px;
+  border:0 !important;
+}
+body>main#top .sphere-labels button{
+  min-height:70px;
+  padding:12px 11px;
+  border:1px solid rgba(243,240,232,.15) !important;
+  border-radius:5px;
+  background:rgba(243,240,232,.035) !important;
+  color:rgba(243,240,232,.68) !important;
+  text-align:left;
+}
+body>main#top .sphere-labels button span{
+  margin-bottom:5px;
+  color:#aebdb5 !important;
+}
+body>main#top .sphere-labels button:hover,
+body>main#top .sphere-labels button.is-active{
+  background:rgba(243,240,232,.11) !important;
+  border-color:rgba(243,240,232,.32) !important;
+  color:#f3f0e8 !important;
+}
+body>main#top .sphere-labels button.is-active span{color:#d7b0a3 !important;}
+
+/* The object index is also separated into readable editorial cards. */
+body>main#top .objects{padding-top:clamp(68px,7vw,96px);}
+body>main#top .objects .heading{margin-bottom:30px;}
+body>main#top .objects article{
+  margin:0 0 16px;
+  padding:clamp(28px,3.4vw,42px);
+  border:1px solid rgba(47,54,50,.14) !important;
+  border-radius:8px;
+  background:rgba(250,248,243,.055);
+  align-items:center;
+}
+body>main#top .objects article:last-child{border-bottom:1px solid rgba(47,54,50,.14) !important;}
+body>main#top .objects article>b{
+  font-size:28px !important;
+  line-height:1;
+}
+body>main#top .objects h3{margin-bottom:16px;}
+body>main#top .objects article>div>p:not(.type){
+  max-width:62ch;
+  font-size:16px !important;
+  line-height:1.66 !important;
+}
+body>main#top .project-cover{
+  border-radius:7px;
+}
+body>main#top .actions button,
+body>main#top .actions a{
+  border-radius:4px;
+  padding:10px 14px;
+}
+
+/* Shared section geometry follows the refined scale. */
+body>main#top .section,
+body>main#top .objects{
+  padding-left:clamp(24px,6vw,96px);
+  padding-right:clamp(24px,6vw,96px);
+}
+body>main#top .section h2,
+body>main#top .heading h2{max-width:22ch;}
+body>main#top .section>div>p{max-width:65ch;}
+
+@media(max-width:900px){
+  body>main#top .sphere-labels{grid-template-columns:repeat(2,minmax(0,1fr));}
+  body>main#top .objects article{padding:28px;}
+}
+@media(max-width:620px){
+  body>main#top .orbital-hero h1{font-size:clamp(48px,15vw,64px) !important;}
+  body>main#top .sphere-labels{gap:7px;}
+  body>main#top .sphere-labels button{min-height:64px;padding:10px;}
+  body>main#top .objects article{padding:22px;}
+  h1,.hero h1,.project-title{font-size:48px !important;}
+  h2,.section h2,.heading h2,.title-panel h2,.layout aside h2{font-size:32px !important;}
+  h3,.objects h3,.method h3,.popup h3{font-size:22px !important;}
+}

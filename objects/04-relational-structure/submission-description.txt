@@ -1,0 +1,9 @@
+RELATIONAL STRUCTURES: THE INVISIBLE BOSS
+
+For this assignment, I selected the CSV-based force-directed network graph and replaced the original academic relationship data with a synthetic dataset about algorithmic management and platform labor.
+
+The nodes represent platforms, algorithms, data systems, workers, market actors, regulators, collective organizations, and labor outcomes. The edges represent six forms of relationship: control, data collection, exchange, governance, collective action, and outcomes.
+
+Relational structures are useful in my work because algorithmic management does not operate through a single visible boss. Power is distributed across task-allocation systems, ratings, pricing models, location tracking, customer behavior, company policy, and regulation. The network makes these normally invisible connections visible and shows where decision-making power becomes concentrated.
+
+Node size represents influence, line width represents relationship strength, and color identifies actor and relationship categories. The visualization includes filtering, zooming, panning, draggable nodes, persistent node selection, tooltips, label controls, and an information panel.

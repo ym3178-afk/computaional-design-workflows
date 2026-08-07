@@ -1,0 +1,18 @@
+(function(){
+const container=document.getElementById("routes-canvas");
+const scene=new THREE.Scene(); scene.background=new THREE.Color(0x34413b); scene.fog=new THREE.FogExp2(0x34413b,.05);
+const camera=new THREE.PerspectiveCamera(42,container.clientWidth/container.clientHeight,.1,120); camera.position.set(6.5,5.2,9);
+const renderer=new THREE.WebGLRenderer({antialias:true}); renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(container.clientWidth,container.clientHeight); container.appendChild(renderer.domElement);
+const controls=new THREE.OrbitControls(camera,renderer.domElement); controls.enableDamping=true; controls.autoRotate=true; controls.autoRotateSpeed=.22;
+const paper=new THREE.MeshStandardMaterial({color:0xf3f0e8,roughness:.78}), warm=new THREE.MeshStandardMaterial({color:0xd4cdc1,roughness:.72}), red=new THREE.MeshStandardMaterial({color:0x9f796c,roughness:.55}), gold=new THREE.MeshStandardMaterial({color:0x819389,roughness:.42,metalness:.22}), ink=new THREE.MeshStandardMaterial({color:0x2f3632,roughness:.85}), glow=new THREE.MeshStandardMaterial({color:0xd8cbb6,emissive:0x819389,emissiveIntensity:1});
+scene.add(new THREE.AmbientLight(0xb5aea1,.48)); const key=new THREE.DirectionalLight(0xe3d8c5,1.1); key.position.set(5,7,5); scene.add(key);
+const coreLight=new THREE.PointLight(0x9aa99f,2.8,11); scene.add(coreLight);
+const core=new THREE.Mesh(new THREE.IcosahedronGeometry(.55,2),glow); core.position.y=.5; scene.add(core);
+const halo=new THREE.Mesh(new THREE.TorusGeometry(1.05,.018,12,180),gold); halo.rotation.x=Math.PI/2; halo.position.y=.5; scene.add(halo);
+const group=new THREE.Group(); scene.add(group); const fragments=[];
+for(let i=0;i<560;i++){ const g=new THREE.Group(),s=.16+Math.random()*.22; g.add(new THREE.Mesh(new THREE.BoxGeometry(s*1.55,.014,s),i%9===0?warm:paper)); if(i%8===0){let seal=new THREE.Mesh(new THREE.CylinderGeometry(s*.16,s*.16,.016,24),red); seal.rotation.x=Math.PI/2; seal.position.set(s*.38,.016,s*.22); g.add(seal);} if(i%5===0){let line=new THREE.Mesh(new THREE.BoxGeometry(s*.72,.01,.006),ink); line.position.set(-s*.12,.018,-s*.15); g.add(line);} let r=1.4+Math.random()*4.3,t=Math.random()*Math.PI*2,ph=Math.acos(2*Math.random()-1),x=r*Math.sin(ph)*Math.cos(t),y=r*Math.cos(ph)*.72+.6,z=r*Math.sin(ph)*Math.sin(t); g.position.set(x,y,z); g.rotation.set(Math.random()*Math.PI,Math.random()*Math.PI,Math.random()*Math.PI); group.add(g); fragments.push({mesh:g,base:new THREE.Vector3(x,y,z),phase:Math.random()*Math.PI*2});}
+const mouse={x:0,y:0}; container.addEventListener("mousemove",e=>{const r=container.getBoundingClientRect(); mouse.x=((e.clientX-r.left)/r.width-.5)*2; mouse.y=-((e.clientY-r.top)/r.height-.5)*2;});
+const clock=new THREE.Clock();
+function animate(){requestAnimationFrame(animate); const t=clock.getElapsedTime(), attractor=new THREE.Vector3(mouse.x*2.4,mouse.y*1.4+.6,0); fragments.forEach(f=>{let base=f.base.clone().multiplyScalar(1+Math.sin(t*.7+f.phase)*.035),d=base.distanceTo(attractor),pull=Math.max(0,1.45-d)/1.45,target=base.lerp(attractor,pull*.46); f.mesh.position.lerp(target,.05); f.mesh.rotation.x+=.004+pull*.02; f.mesh.rotation.y+=.003+pull*.015; f.mesh.scale.setScalar(1+pull*.65);}); group.rotation.y=t*.025; core.rotation.x+=.006; core.rotation.y+=.008; halo.rotation.z=t*.25; coreLight.position.set(mouse.x*1.6,mouse.y*1.2+.6,0); controls.update(); renderer.render(scene,camera);}
+animate(); window.addEventListener("resize",()=>{camera.aspect=container.clientWidth/container.clientHeight; camera.updateProjectionMatrix(); renderer.setSize(container.clientWidth,container.clientHeight);});
+})();

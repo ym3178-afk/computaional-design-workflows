@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Letters Across the Sea | 3D Spatial Canvas</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="style.css" rel="stylesheet"/><link href="../../assets/quiet-theme.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+<nav class="nav">
+<strong>Letters Across the Sea · 3D</strong>
+<a href="#routes">Routes</a>
+<a href="#ocean">Ocean</a>
+<a href="#lantern">Lantern</a>
+<a href="../01-2d-spatial-canvas/index.html">Open 2D</a>
+</nav>
+<header class="hero">
+<p class="eyebrow">three.js · 3D spatial canvas</p>
+<h1>Letters<br/>Across<br/>the Sea</h1>
+<p class="intro">
+      A computational installation about family memory, paper, distance, drifting, and return.
+      This folder contains three interactive Three.js spatial canvases.
+    </p>
+</header>
+<main>
+<section class="canvas-section" id="routes">
+<aside>
+<span>3D Canvas 01 · Three.js</span>
+<h2>Invisible Routes</h2>
+<p>Hundreds of paper fragments form a constellation. The cursor acts like gravity.</p>
+</aside>
+<div class="canvas-box three" id="routes-canvas"></div>
+</section>
+<section class="canvas-section" id="ocean">
+<aside>
+<span>3D Canvas 02 · Three.js</span>
+<h2>Sea of Letters</h2>
+<p>A field of papers becomes a moving ocean surface.</p>
+</aside>
+<div class="canvas-box three" id="ocean-canvas"></div>
+</section>
+<section class="canvas-section" id="lantern">
+<aside>
+<span>3D Canvas 03 · Three.js</span>
+<h2>Archive Lantern</h2>
+<p>A warm lantern core pulls floating paper fragments into orbit.</p>
+</aside>
+<div class="canvas-box three" id="lantern-canvas"></div>
+</section>
+<section class="statement">
+<h2>3D Design Statement</h2>
+<p>
+        These Three.js canvases turn memory into spatial fields. Paper becomes a constellation,
+        an ocean, and a lantern. Gravity, waves, orbit, fog, and drifting replace conventional
+        interface controls with an immersive spatial experience.
+      </p>
+</section>
+</main>
+<footer>
+    Some letters crossed the sea.<br>
+    Some never arrived.
+  </br></footer>
+<script src="js/routes3d.js"></script>
+<script src="js/ocean3d.js"></script>
+<script src="js/lantern3d.js"></script>
+<div id="credit-card">
+<strong>Yizhang Mu</strong> (he/him)<br>
+    Columbia University<br/>
+    GSAPP
+  </br></div>
+<script src="../../assets/object-nav.js"></script>
+</body>
+</html>

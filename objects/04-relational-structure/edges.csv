@@ -1,0 +1,49 @@
+source,target,relationship,course,since,strength,type,department
+Platform,Algorithm,control,Task allocation logic,2016,1,directed,Platform Core
+Algorithm,Courier,control,Assigns delivery tasks,2016,0.95,directed,Labor
+Algorithm,Driver,control,Allocates rides,2012,0.95,directed,Labor
+Algorithm,Picker,control,Sets picking sequence,2015,0.85,directed,Labor
+Platform,Moderator,control,Assigns review queues,2015,0.78,directed,Labor
+Platform,Rating,control,Defines rating rules,2010,0.85,directed,Platform Core
+Customer,Rating,data,Submits ratings,2010,0.75,directed,Data Layer
+Rating,Metrics,data,Produces performance scores,2010,0.82,directed,Data Layer
+Metrics,Courier,control,Triggers rewards or penalties,2016,0.88,directed,Labor
+Metrics,Driver,control,Determines access to work,2012,0.9,directed,Labor
+Metrics,Moderator,control,Tracks review speed,2015,0.74,directed,Labor
+Platform,Pricing,control,Sets pricing logic,2012,0.9,directed,Platform Core
+Pricing,Customer,exchange,Changes service price,2012,0.75,directed,Market
+Pricing,Income,outcome,Shapes worker pay,2012,0.88,directed,Outcomes
+Platform,Data,data,Collects and stores data,2010,0.95,directed,Data Layer
+Location,Data,data,Streams geolocation,2012,0.85,directed,Data Layer
+Courier,Location,data,Generates movement traces,2016,0.8,directed,Data Layer
+Driver,Location,data,Generates movement traces,2012,0.8,directed,Data Layer
+Data,Algorithm,data,Trains optimization models,2014,0.95,directed,Platform Core
+Data,Visibility,control,Ranks and prioritizes accounts,2014,0.8,directed,Outcomes
+Visibility,Restaurant,control,Shapes search ranking,2014,0.75,directed,Market
+Visibility,Merchant,control,Shapes marketplace exposure,2014,0.72,directed,Market
+Customer,Platform,exchange,Pays service fees,2010,0.88,directed,Platform Core
+Platform,Courier,exchange,Pays per task,2016,0.78,directed,Labor
+Platform,Driver,exchange,Pays per ride,2012,0.78,directed,Labor
+Platform,Picker,exchange,Pays hourly or per task,2015,0.65,directed,Labor
+Restaurant,Platform,exchange,Pays commission,2014,0.82,directed,Platform Core
+Merchant,Platform,exchange,Pays transaction fees,2014,0.76,directed,Platform Core
+Advertiser,Platform,exchange,Buys attention,2011,0.7,directed,Platform Core
+Platform,Advertiser,data,Targets audience segments,2011,0.75,directed,Market
+Courier,Customer,exchange,Provides delivery service,2016,0.72,directed,Market
+Driver,Customer,exchange,Provides mobility service,2012,0.72,directed,Market
+Platform,Time,outcome,Extends on-demand availability,2012,0.82,directed,Outcomes
+Algorithm,Time,outcome,Creates waiting and urgency,2016,0.8,directed,Outcomes
+Metrics,Income,outcome,Links score to earnings,2016,0.82,directed,Outcomes
+Rating,Safety,outcome,Encourages risky compliance,2016,0.62,directed,Outcomes
+Platform,Safety,outcome,Sets safety procedures,2014,0.6,directed,Outcomes
+Union,Courier,collective,Organizes collective bargaining,2018,0.75,bidirectional,Collective
+Union,Driver,collective,Organizes collective bargaining,2018,0.75,bidirectional,Collective
+Coop,Courier,collective,Worker ownership,2020,0.82,bidirectional,Collective
+Coop,Restaurant,collective,Shared governance,2020,0.72,bidirectional,Collective
+Coop,Customer,collective,Community accountability,2020,0.65,bidirectional,Collective
+Regulator,Platform,governance,Audits labor practices,2019,0.78,directed,Governance
+Regulator,Algorithm,governance,Requires transparency,2021,0.7,directed,Governance
+City,Platform,governance,Licenses platform operations,2018,0.65,directed,Governance
+Court,Platform,governance,Reviews worker classification,2019,0.72,directed,Governance
+Union,Regulator,governance,Advocates policy change,2019,0.65,directed,Governance
+Coop,Platform,collective,Proposes alternative ownership,2020,0.6,directed,Collective

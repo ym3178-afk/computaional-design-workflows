@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="The Last 800 Meters: a Mapbox GL JS study of restaurant access and delivery infrastructure around Columbia University." name="description"/>
+<title>The Last 800 Meters — Columbia Food Infrastructure</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="style.css" rel="stylesheet"/><link href="../../assets/quiet-theme.css" rel="stylesheet"/>
+</head>
+<body>
+<main class="map-page">
+<div aria-label="Interactive map of restaurant access around Columbia University" id="map"></div>
+<header class="title-panel panel">
+<div class="title-topline">
+<p class="eyebrow">Geospatial Structures · Mapbox GL JS</p>
+<span class="source-badge" id="data-source-badge">DATA —</span>
+</div>
+<h1>The Last<br/><em>800 Meters</em></h1>
+<p class="intro">
+        Restaurant access and potential last-mile delivery infrastructure around Columbia University.
+      </p>
+<div aria-label="Visible-data summary" class="headline-metrics">
+<div>
+<strong id="visible-count">—</strong>
+<span>restaurants in view</span>
+</div>
+<div>
+<strong id="median-distance">—</strong>
+<span>median campus distance</span>
+</div>
+<div>
+<strong id="cuisine-diversity">—</strong>
+<span>cuisine groups represented</span>
+</div>
+</div>
+<div class="research-strip">
+<span>Research question</span>
+<p>How do distance, cuisine concentration, and Broadway–Amsterdam street corridors structure potential last-mile food access to Columbia?</p>
+</div>
+</header>
+<section aria-label="Map filters and analysis controls" class="control-panel panel">
+<div class="panel-heading">
+<div>
+<p class="eyebrow">Analysis controls</p>
+<h2>Read the catchment</h2>
+</div>
+<button class="text-button" id="reset-map" type="button">Reset</button>
+</div>
+<div class="control-grid control-grid-primary">
+<div class="control-block">
+<label for="cuisine-filter">Cuisine group</label>
+<select id="cuisine-filter">
+<option value="all">All cuisines</option>
+<option value="Pizza">Pizza</option>
+<option value="Coffee &amp; Bakery">Coffee &amp; bakery</option>
+<option value="Asian">Asian</option>
+<option value="Latin &amp; Caribbean">Latin &amp; Caribbean</option>
+<option value="American &amp; Fast Food">American &amp; fast food</option>
+<option value="Other">Other cuisines</option>
+</select>
+</div>
+<div class="control-block">
+<label for="radius-filter">Campus distance</label>
+<select id="radius-filter">
+<option value="400">0–400 m</option>
+<option selected="" value="800">0–800 m</option>
+<option value="1200">0–1,200 m</option>
+<option value="1800">0–1,800 m</option>
+<option value="all">All processed records</option>
+</select>
+</div>
+<div class="control-block control-block-wide">
+<label for="corridor-filter">Street context</label>
+<select id="corridor-filter">
+<option value="all">All locations</option>
+<option value="Broadway">Near Broadway</option>
+<option value="Amsterdam Avenue">Near Amsterdam</option>
+<option value="Cross streets / other">Cross streets / other</option>
+</select>
+</div>
+</div>
+<details class="advanced-filters">
+<summary>Advanced inspection filter</summary>
+<div class="control-block advanced-control">
+<label for="grade-filter">Inspection status</label>
+<select id="grade-filter">
+<option value="all">All records</option>
+<option value="A">Grade A</option>
+<option value="attention">B / C / closed</option>
+<option value="ungraded">Not graded</option>
+</select>
+</div>
+</details>
+<div aria-label="Map display mode" class="mode-row">
+<button aria-pressed="true" class="mode-button is-active" data-mode="points" type="button">Restaurant points</button>
+<button aria-pressed="false" class="mode-button" data-mode="density" type="button">Density field</button>
+</div>
+<div class="button-row">
+<button id="campus-view" type="button">Campus view</button>
+<button id="district-view" type="button">District view</button>
+<button class="presentation-button" id="presentation-mode" type="button">Presentation mode</button>
+</div>
+<label class="toggle-row">
+<input checked="" id="toggle-context" type="checkbox"/>
+<span>Show access points and analytical corridors</span>
+</label>
+<p class="status" id="status" role="status">Waiting for Mapbox…</p>
+</section>
+<aside aria-label="Map legend" class="legend-panel panel">
+<div class="legend-header">
+<p class="legend-title">Cuisine groups</p>
+<span class="legend-focus">800 M FOCUS</span>
+</div>
+<div class="legend-grid">
+<span><i style="--swatch:#e4572e"></i>Pizza</span>
+<span><i style="--swatch:#8a5a44"></i>Coffee &amp; bakery</span>
+<span><i style="--swatch:#276fbf"></i>Asian</span>
+<span><i style="--swatch:#6f8f3a"></i>Latin &amp; Caribbean</span>
+<span><i style="--swatch:#dca62a"></i>American &amp; fast food</span>
+<span><i style="--swatch:#77777f"></i>Other</span>
+</div>
+<div class="legend-rule focus-rule"><i class="focus-ring-line"></i><span>800 m analytical focus</span></div>
+<div class="legend-rule"><i class="ring-line"></i><span>400 m / 1,200 m reference bands</span></div>
+<div class="legend-rule"><i class="corridor-line"></i><span>Broadway / Amsterdam proxy corridor</span></div>
+<p class="legend-note">Distance is straight-line distance from the campus anchor—not a rider route or delivery-time estimate.</p>
+</aside>
+<div class="map-caption">
+<span>NYC DOHMH restaurant records · local fallback included for reliability</span>
+<span>Yizhang Mu · Columbia GSAPP CDP</span>
+</div>
+<button class="exit-presentation" hidden="" id="exit-presentation" type="button">Exit presentation</button>
+<section class="error-panel panel" hidden="" id="error-panel">
+<p class="eyebrow">Loading error</p>
+<h2>The map could not load</h2>
+<p id="error-message"></p>
+</section>
+</main>
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+<script src="mapBox_Sketch_03.js"></script>
+<script src="../../assets/object-nav.js"></script>
+</body>
+</html>

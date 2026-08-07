@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="An interactive D3.js temporal study of New York City water consumption from 1979 to 2024." name="description"/>
+<title>A City Learns to Use Less — Temporal Structure</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="style.css" rel="stylesheet"/><link href="../../assets/quiet-theme.css" rel="stylesheet"/>
+<script src="d3.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+<a href="../../index.html#objects">← Structures of the Unseen</a>
+<span>03 / TEMPORAL STRUCTURE</span>
+<a href="https://data.cityofnewyork.us/d/ia2d-e54m" rel="noreferrer" target="_blank">NYC Open Data ↗</a>
+</header>
+<main>
+<section class="hero">
+<p class="eyebrow">D3.JS · EXTERNAL CSV · NYC OPEN DATA · 1979–2024</p>
+<h1>A City Learns<br/><em>to Use Less</em></h1>
+<div class="hero-copy">
+<p>New York City grew while its daily water demand declined. This temporal study asks how a long historical series can make that counterintuitive relationship visible without turning it into a conventional dashboard.</p>
+<dl>
+<div><dt>46</dt><dd>annual records</dd></div>
+<div><dt>3</dt><dd>linked measures</dd></div>
+<div><dt>1</dt><dd>citywide system</dd></div>
+</dl>
+</div>
+</section>
+<section class="statement section-grid">
+<p class="section-index">00 / CONTEXT</p>
+<div class="statement-grid">
+<article><h2>Attempt</h2><p>I used temporal structure to compare total water consumption, per-capita demand, and population across forty-six years. The goal was to show that urban growth and resource demand do not always move in the same direction.</p></article>
+<article><h2>Method</h2><p>The page follows the tutorial sequence: load an external CSV, parse dates and numbers, bind data to SVG, build time and linear scales, add axes, tooltips, transitions, and coordinated views.</p></article>
+<article><h2>Dataset</h2><p><em>Water Consumption in the City of New York</em>, published through NYC Open Data by the Department of Environmental Protection. The included CSV is a static 1979–2024 snapshot.</p></article>
+<article><h2>Limitation</h2><p>Annual citywide averages hide seasonal peaks, borough differences, building types, leakage, pricing, and unequal household access. The chart describes a system-level trend, not individual behavior.</p></article>
+</div>
+</section>
+<section class="summary section-grid">
+<p class="section-index">01 / LONG CHANGE</p>
+<div>
+<div class="section-heading">
+<div><p class="kicker">1979 → 2024</p><h2>More residents.<br/>Less water.</h2></div>
+<p>These figures are calculated from the first and last records in the CSV.</p>
+</div>
+<div aria-live="polite" class="summary-cards" id="summary-cards"></div>
+</div>
+</section>
+<section class="chart-section section-grid">
+<p class="section-index">02 / METRIC VIEW</p>
+<div>
+<div class="section-heading chart-heading">
+<div><p class="kicker">INTERACTIVE LINE</p><h2>Read one measure at a time.</h2></div>
+<div aria-label="Choose a metric" class="metric-controls" role="group">
+<button class="active" data-metric="per_capita_gpd">Per capita</button>
+<button data-metric="consumption_mgd">Total consumption</button>
+<button data-metric="population">Population</button>
+</div>
+</div>
+<p class="instruction">Move across the line to inspect a year. Use the buttons to change the y-axis, units, annotation, and year-over-year bars.</p>
+<div aria-label="Interactive line chart of New York City water data" class="chart-frame" id="metric-chart" role="img"></div>
+<div class="metric-caption" id="metric-caption"></div>
+</div>
+</section>
+<section class="chart-section section-grid compact-section">
+<p class="section-index">03 / ANNUAL RHYTHM</p>
+<div>
+<div class="section-heading">
+<div><p class="kicker">YEAR-OVER-YEAR CHANGE</p><h2>Change is uneven.</h2></div>
+<p>Bars above zero indicate an increase from the previous year; bars below zero indicate a decrease. The view updates with the selected metric.</p>
+</div>
+<div aria-label="Year-over-year percentage change chart" class="chart-frame small" id="change-chart" role="img"></div>
+</div>
+</section>
+<section class="chart-section section-grid">
+<p class="section-index">04 / RELATIVE PATHS</p>
+<div>
+<div class="section-heading">
+<div><p class="kicker">INDEX: 1979 = 100</p><h2>Three measures,<br/>one starting point.</h2></div>
+<p>Normalizing the measures makes their directions comparable despite different units. Population rises while total and per-capita demand fall.</p>
+</div>
+<div aria-label="Normalized comparison of population and water consumption" class="chart-frame" id="index-chart" role="img"></div>
+<div aria-label="Chart legend" class="legend">
+<span><i class="population"></i>Population</span>
+<span><i class="consumption"></i>Total consumption</span>
+<span><i class="percapita"></i>Per capita</span>
+</div>
+</div>
+</section>
+<section class="reading section-grid">
+<p class="section-index">05 / READING</p>
+<div>
+<h2>The temporal argument</h2>
+<div class="reading-grid">
+<p><strong>Time reveals decoupling.</strong> A single year only shows a quantity. The full sequence reveals a structural divergence: population grows, yet total demand falls.</p>
+<p><strong>Scale changes interpretation.</strong> Total consumption describes infrastructure demand; per-capita consumption reframes the same system as average demand per resident.</p>
+<p><strong>Transitions preserve continuity.</strong> The animated metric switch keeps the same years in place, allowing the viewer to compare measures without losing temporal orientation.</p>
+</div>
+</div>
+</section>
+<section class="data-notes section-grid">
+<p class="section-index">06 / DATA NOTES</p>
+<div>
+<h2>Files and provenance</h2>
+<ul>
+<li><code>data/nyc-water-consumption.csv</code> — 46 annual records and four fields.</li>
+<li><code>chart.js</code> — CSV parsing, scales, axes, data binding, tooltips, transitions, and responsive redraw.</li>
+<li><strong>Source:</strong> NYC Open Data, Department of Environmental Protection, dataset <code>ia2d-e54m</code>.</li>
+<li><strong>Units:</strong> MGD = million gallons per day; GPD = gallons per person per day.</li>
+</ul>
+<p class="server-note"><strong>Local preview:</strong> the page first loads <code>data/nyc-water-consumption.csv</code>. If a browser blocks local CSV access, the same dataset is loaded from an embedded fallback so the object can still open directly.</p>
+</div>
+</section>
+</main>
+<div aria-hidden="true" class="tooltip" id="tooltip" role="status"></div>
+<script src="chart.js"></script>
+<script src="../../assets/object-nav.js"></script>
+</body>
+</html>

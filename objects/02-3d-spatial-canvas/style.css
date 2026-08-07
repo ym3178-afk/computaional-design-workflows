@@ -1,0 +1,205 @@
+* { box-sizing: border-box; }
+
+:root{
+  --paper:#efe2c5;
+  --old-paper:#d7c19b;
+  --ink:#3a2a23;
+  --deep:#0f1715;
+  --deep2:#111f1a;
+  --red:#8f2d2d;
+  --flower:#9b322d;
+  --brass:#a67c3a;
+  --teal:#8fa8a4;
+  --muted:#cbb891;
+}
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(166,124,58,.16), transparent 28%),
+    radial-gradient(circle at 86% 42%, rgba(18,36,31,.88), transparent 45%),
+    linear-gradient(180deg,#0f1715 0%,#111b18 52%,#090d0c 100%);
+  color:var(--paper);
+  font-family: "Instrument Serif",serif;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:radial-gradient(circle,rgba(239,226,197,.12) 0 1px,transparent 1.5px);
+  background-size:28px 28px;
+  opacity:.12;
+  mix-blend-mode:soft-light;
+  z-index:10;
+}
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  display:flex;
+  align-items:center;
+  gap:22px;
+  padding:18px 7vw;
+  background:rgba(9,13,12,.78);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(166,124,58,.25);
+}
+
+.nav strong{
+  margin-right:auto;
+  font-weight:400;
+  letter-spacing:.8px;
+}
+
+.nav a{
+  color:rgba(239,226,197,.65);
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  font-size:10.5px;
+}
+
+.nav a:hover{ color:var(--paper); }
+
+.hero{
+  min-height:94vh;
+  padding:76px 7vw 96px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color:#2b211b;
+  background:
+    radial-gradient(circle at 72% 26%, rgba(239,226,197,.50), transparent 24%),
+    radial-gradient(circle at 22% 76%, rgba(143,45,45,.24), transparent 30%),
+    linear-gradient(135deg,#efe2c5 0%,#c7a46a 40%,#12241f 100%);
+  border-bottom:1px solid rgba(166,124,58,.68);
+}
+
+.eyebrow{
+  margin:0 0 36px;
+  letter-spacing:2.2px;
+  text-transform:uppercase;
+  font-size:13px;
+}
+
+h1{
+  margin:0;
+  font-size:clamp(78px,13vw,180px);
+  line-height:.76;
+  letter-spacing:-8px;
+  font-weight:400;
+}
+
+.intro{
+  max-width:850px;
+  margin-top:38px;
+  font-size:19px;
+  line-height:1.72;
+}
+
+main{ padding:0 7vw 100px; }
+
+.canvas-section{
+  display:grid;
+  grid-template-columns:285px minmax(0,1fr);
+  gap:52px;
+  padding:96px 0;
+  border-bottom:1px solid rgba(239,226,197,.18);
+}
+
+aside{
+  position:sticky;
+  top:92px;
+  align-self:start;
+  border-left:1px solid var(--brass);
+  padding-left:24px;
+}
+
+aside span{
+  color:var(--brass);
+  font-size:12px;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+}
+
+h2{
+  margin:22px 0 16px;
+  font-size:clamp(40px,4vw,64px);
+  line-height:.94;
+  font-weight:400;
+  letter-spacing:-1.4px;
+}
+
+aside p,.statement p{
+  color:var(--muted);
+  line-height:1.74;
+  font-size:16px;
+}
+
+.canvas-box{
+  width:min(100%,1080px);
+  height:660px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(166,124,58,.9);
+  background:#101815;
+  box-shadow:18px 18px 0 rgba(0,0,0,.38),0 40px 120px rgba(0,0,0,.5);
+}
+
+.canvas-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border:10px solid rgba(239,226,197,.025);
+  z-index:2;
+}
+
+.canvas-box canvas{
+  display:block;
+  width:100% !important;
+  height:100% !important;
+}
+
+.statement{
+  max-width:980px;
+  margin:96px 0 20px;
+  padding:38px;
+  border-left:1px solid var(--brass);
+  background:rgba(239,226,197,.045);
+}
+
+footer{
+  padding:94px 7vw;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:clamp(34px,5vw,74px);
+  line-height:1.12;
+}
+
+@media(max-width:880px){
+  .nav{ flex-wrap:wrap; }
+  .canvas-section{ grid-template-columns:1fr; }
+  aside{ position:relative; top:0; }
+  .canvas-box{ height:520px; }
+}
+
+#credit-card{
+  position:fixed;
+  right:20px;
+  bottom:16px;
+  z-index:9999;
+  font-family:Inter,-apple-system,"Segoe UI",sans-serif;
+  font-size:13px;
+  color:#f1e7cf;
+  background:rgba(9,13,12,.45);
+  padding:8px 12px;
+  border:1px solid rgba(232,216,184,.18);
+  backdrop-filter:blur(8px);
+  border-radius:8px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Letters Across the Sea | 2D Spatial Canvas</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="style.css" rel="stylesheet"/><link href="../../assets/quiet-theme.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body>
+<nav class="nav">
+<strong>Letters Across the Sea · 2D</strong>
+<a href="#archive">Archive</a>
+<a href="#tree">Tree</a>
+<a href="#flower">Flower</a>
+<a href="../02-3d-spatial-canvas/index.html">Open 3D</a>
+</nav>
+<header class="hero">
+<p class="eyebrow">p5.js · 2D spatial canvas</p>
+<h1>Letters<br/>Across<br/>the Sea</h1>
+<p class="intro">
+      A computational installation about family memory, paper, wind, flowers, distance, and return.
+      This folder contains one static 2D canvas and two dynamic 2D canvases.
+    </p>
+</header>
+<main>
+<section class="canvas-section" id="archive">
+<aside>
+<span>2D Canvas 01 · Static Archive Board</span>
+<h2>The Letter Archive</h2>
+<p>A tactile memory archive board built as a static 2D composition: an aged Thailand map anchors a family photo, a handwritten letter, a ticket, and a diary page, all connected by red thread and a narrative timeline.</p>
+</aside>
+<div class="canvas-box archive-static-box" id="archive-canvas">
+<img alt="The Letter Archive memory board" class="archive-static-image" src="images/letter-archive-board.png"/>
+</div>
+</section>
+<section class="canvas-section" id="tree">
+<aside>
+<span>2D Canvas 02 · Dynamic</span>
+<h2>Wishing Tree</h2>
+<p>Red flowers bloom on a tree. Hanging letters swing with wind. Move the mouse to change the wind.</p>
+</aside>
+<div class="canvas-box" id="tree-canvas"></div>
+</section>
+<section class="canvas-section" id="flower">
+<aside>
+<span>2D Canvas 03 · Dynamic</span>
+<h2>Red Cotton Flower</h2>
+<p>A large red flower carries floating letter papers against a muted teal paper background.</p>
+</aside>
+<div class="canvas-box" id="flower-canvas"></div>
+</section>
+<section class="statement">
+<h2>2D Design Statement</h2>
+<p>
+        These canvases translate memory into layered images. In The Letter Archive, the composition behaves like a quiet evidence board: Thailand becomes a paper map, Bangkok becomes a pin, and family memory is distributed across a photograph, a letter, a train ticket, and a diary fragment. Red thread links each artifact to the map and the bottom timeline, turning biography into a readable spatial narrative. The two dynamic canvases extend that language into wind, bloom, and suspended letters.
+      </p>
+</section>
+</main>
+<footer>
+    Some letters crossed the sea.<br>
+    Some never arrived.
+  </br></footer>
+<script src="js/wishingTree.js"></script>
+<script src="js/cottonFlower.js"></script>
+<div id="credit-card">
+<strong>Yizhang Mu</strong> (he/him)<br>
+    Columbia University<br/>
+    GSAPP
+  </br></div>
+<script src="../../assets/object-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="An interactive D3.js network mapping the relationships within algorithmic management." name="description"/>
+<title>The Invisible Boss — Relational Structures</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="style.css" rel="stylesheet"/><link href="../../assets/quiet-theme.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="#top">YIZHANG MU</a>
+<div class="course">COMPUTATIONAL DESIGN WORKFLOWS</div>
+<a class="nav-link" href="#reflection">REFLECTION</a>
+</header>
+<main id="top">
+<section class="hero">
+<div class="eyebrow">DIGITAL OBJECT 3 · RELATIONAL STRUCTURES · 2026</div>
+<h1>The Invisible Boss</h1>
+<p class="dek">A relational map of how platforms coordinate labor through algorithms, data, markets, and governance.</p>
+<div class="hero-meta">
+<span>24 nodes</span><span>48 relationships</span><span>D3.js force network</span>
+</div>
+</section>
+<section aria-labelledby="visualization-title" class="viz-section">
+<div class="section-heading">
+<div>
+<p class="kicker">INTERACTIVE NETWORK</p>
+<h2 id="visualization-title">Who controls whom?</h2>
+</div>
+<p class="instruction">Filter relationships · scroll to zoom · drag to pan · click a node to trace its connections</p>
+</div>
+<div class="viz-shell">
+<aside aria-label="Visualization controls" class="control-panel">
+<div class="panel-block">
+<div class="panel-label">RELATIONSHIPS</div>
+<div class="filters" id="filters"></div>
+</div>
+<div class="panel-block">
+<div class="panel-label">NODE TYPES</div>
+<div class="node-legend" id="node-legend"></div>
+</div>
+<div class="panel-actions">
+<button id="reset-view" type="button">Reset view</button>
+<button id="release-nodes" type="button">Release nodes</button>
+<button id="toggle-labels" type="button">Hide labels</button>
+</div>
+</aside>
+<div class="canvas-wrap">
+<div aria-label="Interactive network graph of algorithmic management" id="network" role="img"></div>
+<div class="canvas-note">Node size = influence · Line width = relationship strength</div>
+</div>
+<aside aria-live="polite" class="detail-panel" id="detail-panel">
+<div class="panel-label">SELECTED NODE</div>
+<div class="detail-empty">
+<div class="empty-mark">+</div>
+<p>Select a node to reveal its role and direct relationships.</p>
+</div>
+</aside>
+</div>
+</section>
+<section class="reflection" id="reflection">
+<div class="reflection-index">01</div>
+<div>
+<p class="kicker">RELATIONAL STRUCTURES IN MY WORK</p>
+<h2>From isolated actors to a system of power</h2>
+</div>
+<div class="reflection-copy">
+<p>Relational structures help me study algorithmic management as a socio-technical system rather than a single piece of software. Workers, customers, businesses, regulators, data, and automated decisions are represented as nodes; control, exchange, data collection, and collective action become edges.</p>
+<p>The network makes unequal positions visible. The platform and its algorithms occupy highly connected positions, while workers are linked to income, time, safety, ratings, and data extraction. In a future project, I could compare this centralized network with a worker-owned platform cooperative to test how a change in ownership reorganizes decision-making and accountability.</p>
+</div>
+</section>
+</main>
+<footer>
+<span>Columbia GSAPP</span>
+<span>Yizhang Mu · Relational Structures</span>
+<span>2026</span>
+</footer>
+<div class="tooltip" id="tooltip" role="tooltip"></div>
+<script src="d3.min.js"></script>
+<script src="graph.js"></script>
+<script src="../../assets/object-nav.js"></script>
+</body>
+</html>
